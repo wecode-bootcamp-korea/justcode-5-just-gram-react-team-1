@@ -1,0 +1,205 @@
+@mixin asideProfile {
+  margin-bottom: 15px;
+  width: 55px;
+  height: 55px;
+  border: 1px solid #fafafa;
+  border-radius: 100%;
+  background-size: 55px;
+}
+
+.aside {
+  padding-top: 50px;
+  width: 350px;
+
+  .side-titlebox {
+    display: flex;
+
+    .side-titlelogo {
+      width: 70px;
+      height: 70px;
+      border-radius: 100%;
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding-top: 25px;
+      margin-right: 15px;
+    }
+
+    .side-title {
+      margin: auto 0;
+
+      .title-name {
+        font-size: 18px;
+      }
+      .title-author {
+        font-size: 14px;
+        margin-left: 2px;
+        margin-top: 2px;
+      }
+    }
+  }
+
+  .side-storiesbox {
+    margin-top: 15px;
+    height: 300px;
+    width: 300px;
+    border: 3px solid #ddd;
+
+    .side-storiestitle {
+      background-color: white;
+      padding: 0 10px;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .side-storieslist {
+      height: 255px;
+      background-color: white;
+      overflow: auto;
+      padding-left: 10px;
+
+      .side-story {
+        display: flex;
+
+        &:nth-child(1) .story-profile {
+          background-image: url("../../../assets/images/jeonghoon/city-sun.jpg");
+        }
+
+        &:nth-child(2) .story-profile {
+          background-image: url("../../../assets/images/jeonghoon/city.png");
+        }
+
+        &:nth-child(3) .story-profile {
+          background-image: url("../../../assets/images/jeonghoon/maple\ forest.png");
+        }
+
+        &:nth-child(4) .story-profile {
+          background-image: url("../../../assets/images/jeonghoon/mountain.png");
+        }
+
+        &:nth-child(5) .story-profile {
+          background-image: url("../../../assets/images/jeonghoon/Sea.jpeg");
+        }
+
+        .story-profile {
+          @include asideProfile;
+        }
+
+        .story-title {
+          margin-left: 10px;
+
+          .story-name {
+            margin-top: 10px;
+            font-size: 16px;
+          }
+
+          .story-time {
+            margin-top: 2px;
+            font-size: 13px;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  .side-recommandsbox {
+    margin-top: 15px;
+    height: 300px;
+    width: 300px;
+    border: 3px solid #ddd;
+    background-color: white;
+
+    .side-recommandstitle {
+      background-color: white;
+      padding: 0 10px;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .side-recommandslist {
+      list-style-type: none;
+      padding-inline-start: 0;
+      padding-left: 10px;
+      overflow: auto;
+      margin-block-end: 0;
+      margin-block-start: 0;
+      height: 255px;
+
+      .side-recommand {
+        display: flex;
+        justify-content: space-between;
+
+        &:nth-child(1) .recommand-profile {
+          background-image: url("../../../assets/images/jeonghoon/universe-2.jpg");
+        }
+
+        &:nth-child(2) .recommand-profile {
+          background-image: url("../../../assets/images/jeonghoon/universe-3.jpg");
+        }
+
+        &:nth-child(3) .recommand-profile {
+          background-image: url("../../../assets/images/jeonghoon/universe.jpg");
+        }
+
+        &:nth-child(4) .recommand-profile {
+          background-image: url("../../../assets/images/jeonghoon/city.png");
+        }
+
+        &:nth-child(5) .recommand-profile {
+          background-image: url("../../../assets/images/jeonghoon/mountain.png");
+        }
+
+        .recommand-profile {
+          @include asideProfile;
+        }
+
+        .recommand-title {
+          flex-grow: 3;
+          margin-left: 10px;
+
+          .recommand-name {
+            margin-top: 10px;
+            font-size: 16px;
+          }
+
+          .recommand-follower {
+            margin-top: 2px;
+            font-size: 13px;
+            opacity: 0.5;
+          }
+        }
+
+        .recommand-follow {
+          margin-right: 10px;
+          border: none;
+          outline: none;
+          box-shadow: none;
+          background-color: transparent;
+          color: rgb(80, 149, 228);
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    .side-information {
+      margin: 15px 0;
+      opacity: 0.4;
+      width: 300px;
+    }
+
+    .side-company {
+      opacity: 0.4;
+      width: 300px;
+    }
+  }
+}
