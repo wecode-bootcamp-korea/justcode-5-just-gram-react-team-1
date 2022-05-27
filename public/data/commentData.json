@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "userName": "ssujinc",
+        "content": "반갑습니다.",
+        "isLiked": true
+    },
+    {
+        "id": 2,
+        "userName": "azure928",
+        "content": "포기 하고 싶다!",
+        "isLiked": false
+    },
+    {
+        "id": 3,
+        "userName": "Lemonade12",
+        "content": "hi hello bye",
+        "isLiked": false
+    },
+    {
+        "id": 4,
+        "userName": "Choi-jeonghoon",
+        "content": "못하겠다!!",
+        "isLiked": false
+    },
+    {
+        "id": 5,
+        "userName": "minuk3508",
+        "content": "what the code!",
+        "isLiked": false
+    }
+]
