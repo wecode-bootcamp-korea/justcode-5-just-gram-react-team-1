@@ -22,7 +22,7 @@ export default function Login(){
     }
 
     const checkValidation = () => {
-        console.log(`확인용 ${userId}, ${userPw}`);
+        // console.log(`확인용 ${userId}, ${userPw}`);
         if( userId.includes("@") && userPw.length > 7){
             return true;
         }

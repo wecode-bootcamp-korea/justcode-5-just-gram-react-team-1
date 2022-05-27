@@ -225,10 +225,10 @@ export default function Main(){
                                     type="text" 
                                     placeholder="댓글 달기" 
                                     onChange={handleChange} 
-                                    onKeyDown={handelKeyDown}
+                                    onKeyPress={handelKeyDown}
                                     value={text}
                                     ref={commentInput}
-                                 />
+                                />
                                 <button type="button" 
                                     className="btn_addComment" 
                                     onClick={commentClickBtn} 
