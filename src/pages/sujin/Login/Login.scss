@@ -50,3 +50,8 @@ img, video { max-width:100%; height:auto; }
 
     &>a{ color:#00376b; }
 }
+
+@media screen and (max-width: 380px) {
+    .login_wrap{ width:92%; }
+    .login_input{ width:88%; }
+}

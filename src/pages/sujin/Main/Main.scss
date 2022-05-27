@@ -199,3 +199,27 @@ main{ display:flex; justify-content:space-between; width:940px; margin:0  auto; 
         }
     }
 }
+
+@media screen and (max-width: 980px) {
+    nav .cont{ width:100%; }
+    main{ flex-direction:column; justify-content:center; width:100%; }
+    main .feeds_stn{ flex:none; width:80%; max-width:600px; padding-right:0; margin:0 auto; }
+    .feeds_cont .feeds_comments input{ width:90%; }
+    main .main_right{ position:static; width:100%; height:auto; }
+    .main_right .profile_cont, .main_right .stn{ display:none; }
+    .info_stn{ display:flex; justify-content:center; align-items:center; flex-direction:column; padding:10px 4%; }
+    .info_stn > p{ margin-top:4px; }
+}
+
+@media screen and (max-width: 480px) {
+    nav .cont{ padding:12px 0; }
+    nav .logo .ico_logo{ width:20px; height:20px; }
+    .logo .txt{ font-size:20px; margin-left:8px; padding-left:8px; }
+    .logo .txt::before{ top:4px; height:24px; }
+    nav .search_cont{ display:none; }
+    nav .nav_btns button{ width:40px; height:40px; }
+    main{ padding-top:70px; }
+    main .feeds_stn{ padding-top:36px; }
+    .feeds_cont .desc_cnt .desc{ width:54%; }
+    main .feeds_stn{ width:100%; max-width:none; }
+}
