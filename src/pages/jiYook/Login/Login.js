@@ -33,7 +33,7 @@ function Login() {
 
   return (
     <div className='loginWindow'>
-      <form className='container'>
+      <form className='login-container'>
         <h1 className='logo'>Justgram</h1>
         <input
           id='id'

@@ -1,68 +1,110 @@
 import React from 'react';
-import './Main.css';
+import './Main.scss';
 
 function Main() {
   return (
-    <div className='main_container'>
-      <nav className='nav_container'>
-        <span className='nav_left'>
-          <img
-            className='nav_logo'
-            src='/images/instagram_logo.png'
-            alt='logo'
-          />
-          <span className='nav_title'>Justgram</span>
-        </span>
-        <span className='nav_center'>검색</span>
-        <span className='nav_right'>
-          <img
-            className='nav_explore'
-            src='/images/explore.png'
-            alt='explore'
-          />
-          <img className='nav_heart' src='/images/heart.png' alt='heart' />
-          <img
-            className='nav_profile'
-            src='/images/profile.png'
-            alt='profile'
-          />
-        </span>
-      </nav>
-      <main className='main_content'>
+    <div className='main-container'>
+      <div className='nav-box'>
+        <div className='nav'>
+          <div className='nav-logo-box'>
+            <i className='fa-brands fa-instagram nav-icons'></i>
+            <span className='nav-logo-text'>Justgram</span>
+          </div>
+          <div className='nav-serch-box'>
+            <input type='text' placeholder='검색' />
+          </div>
+          <div className='nav-right-box'>
+            <i className='fa-regular fa-compass nav-right-icons'></i>
+            <i className='fa-regular fa-heart nav-right-icons'></i>
+            <i className='fa-regular fa-user nav-right-icons'></i>
+          </div>
+        </div>
+      </div>
+
+      <div className='main'>
         <div className='feeds'>
-          <article className='main_article_container'>
-            <div className='article_head'>
-              <img className='article_profile_image' src='sdfas' alt='P' />
-              <span className='article_head_nickname'>
-                <span>wecode_bootcamp</span>
-                <span>WeCode - 위코드</span>
-              </span>
+          <div className='article'>
+            <div className='article-header'>
+              <div className='article-header-user'>
+                <span
+                  className='header-user'
+                  id='header-user-img-box'
+                  alt='user image'
+                >
+                  <img
+                    id='user-img'
+                    src='images/jiYook/zhan-zhang-e5thHbI70uw-unsplash.jpg'
+                  />
+                </span>
+                <span className='header-user' id='header-use-text'>
+                  user id
+                </span>
+              </div>
+              <div className='elipsis'>
+                <i className='fa-solid fa-ellipsis'></i>
+              </div>
             </div>
-            <div className='main_article_img_section'>
+            <div className='article-img-box'>
               <img
-                className='main_article_img_card'
-                src='https://images.unsplash.com/photo-1647762957673-aab5254feb8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1302&q=80'
-                alt='pic'
+                className='article-img'
+                src='images/jiYook/alvan-nee-T-0EW-SEbsE-unsplash.jpg'
+                alt='feedimage'
               />
             </div>
-            <div className='article_button_group'>
-              <span>하트 말풍선 내려받기</span>
-              <span>북마크</span>
+            <div className='article-icons'>
+              <div className='article-icons-left'>
+                <i className='fa-regular fa-heart article-icons-items'></i>
+                <i className='fa-regular fa-comment article-icons-items'></i>
+                <i className='fa-regular fa-paper-plane article-icons-items'></i>
+              </div>
+              <div className='article-icons-right'>
+                <i className='fa-regular fa-bookmark'></i>
+              </div>
             </div>
-            <div className='article_people_like'>~외 3명이 좋아합니다.</div>
-            <div className='article_content'>
-              <span>wecode_bootcamp</span>
-              <span>
-                위코드는 단순 교육업체가 아닌 개발자 커뮤니티입니다. Wecode에서
-                배우고 저는 총 5개의 회사에서 오퍼를 받았습니다.
-              </span>
-              <div>write ago</div>
+            <div className='article-likes'>
+              <div className='article-likes-profile'>
+                <img
+                  className='likes-profile'
+                  src='images/jiYook/shifaaz-shamoon-9K9ipjhDdks-unsplash.jpg'
+                  alt='user photo'
+                />
+              </div>
+              <p>
+                <span className='bold-text'>user id</span>님
+                <span className='bold-text'>외 n명</span>이 좋아합니다
+              </p>
             </div>
-            <div>댓글 달기</div>
-          </article>
+            <div className='article-contents'>
+              <span className='bold-text user-id'>user id</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <span className='more'>더 보기..</span>
+            </div>
+            <div className='article-comment'>
+              <span className='bold-text user-id'>user id</span>
+              <p>댓글 내용입니다!!!!!!!!!</p>
+            </div>
+            <div className='article-input-comments'>
+              <i className='fa-regular fa-face-smile'></i>
+              <form className='comment-form'>
+                <input
+                  className='comment-input'
+                  type='text'
+                  placeholder='댓글 달기...'
+                  id='comment_input'
+                />
+                <button className='comment-submit' type='submit'>
+                  <span className=''>게시</span>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className='main-right'>
+            <div className='main-right-user'></div>
+            <div className='main-right-story'></div>
+            <div className='main-right-recommend'></div>
+          </div>
         </div>
-        <div className='main_right'>내용</div>
-      </main>
+      </div>
     </div>
   );
 }
