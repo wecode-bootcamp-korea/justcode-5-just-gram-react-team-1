@@ -1,0 +1,14 @@
+#root {
+  position: absolute;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(249, 249, 249, 0.962);
+}
+
+@media (max-width: 768px) {
+  main.main{width: 100%;}
+}
