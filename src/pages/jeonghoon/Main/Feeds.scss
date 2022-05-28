@@ -1,14 +1,14 @@
 .feeds {
   margin-right: 15px;
-  padding: 60px 8px 20px 8px;
+  padding: 0px 8px 20px 8px;
   width: 800px;
-  height: 1000px;
+  height: 900px;
+  overflow: auto;
 
   .article {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 900px;
+    
     border: 3px solid #ddd;
     background-color: white;
 
@@ -59,7 +59,7 @@
       justify-content: space-between;
 
       .feed-menusleft {
-        display: inline;
+        display: flex;
 
         .menuslogo {
           margin-left: 12px;
@@ -169,4 +169,11 @@
       }
     }
   }
+}
+@media screen and (max-width: 1200px){
+  .nav .navbar{width:100%;}
+}
+
+@media (max-width: 768px) {
+  aside.aside{display: none;}
 }

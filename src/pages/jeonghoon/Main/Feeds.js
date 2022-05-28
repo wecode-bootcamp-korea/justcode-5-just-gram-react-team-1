@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Comments from "./Comments";
 import "./Feeds.scss";
-import { AiTwotoneHeart } from "react-icons/ai";
+import { AiTwotoneHeart, AiOutlineHeart} from "react-icons/ai";
 import { BiCommentDetail } from "react-icons/bi";
 import { MdOutlineIosShare } from "react-icons/md";
 import { BsThreeDots, BsBookmarkFill } from "react-icons/bs";
@@ -9,12 +9,20 @@ import { BsThreeDots, BsBookmarkFill } from "react-icons/bs";
 function Feeds() {
   const commentText = [];
   const [commentList, setCommentList] = useState([]);
+  const [feed, setFeed] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/data/jeonghoon/mock.json")
+    fetch("http://localhost:3000/data/commentData.json")
       .then((res) => res.json())
       .then((data) => setCommentList(data));
   }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/data/feedData.json")
+      .then((res) => res.json())
+      .then((data) => setFeed(data));
+  }, []);
+
 
   const getComment = (event) => {
     commentText[0] = event.target.value;
@@ -38,13 +46,17 @@ function Feeds() {
   };
   return (
     <div className="feeds">
-      <article className="article">
+      {feed.map(f => 
+        {return(
+          <article className="article">
         <div className="feed-titlebox">
           <div className="feed-titleboxleft">
             <div className="feed-titlelogo">JH</div>
             <div className="feed-title">
-              <div className="title-name">JeongHoon</div>
-              <div className="title-author">Jeonghoon</div>
+              <div className="title-name">{
+              f.userName          
+              }</div>
+              <div className="title-author">{f.userName}</div>
             </div>
           </div>
 
@@ -53,12 +65,11 @@ function Feeds() {
           </div>
         </div>
         <div className="feed-img">
-          <img src="/images/jeonghoon/최정훈.jpeg" alt="feed" />
+          <img src={f.feedImage} alt="feed" />
         </div>
         <div className="feed-menus">
           <div className="feed-menusleft">
-            <span className="menuslogo menusleft-heart">
-              <AiTwotoneHeart />
+            <span className="menuslogo menusleft-heart">{f.isLiked ===true ? <AiTwotoneHeart /> : <AiOutlineHeart /> }
             </span>
             <span className="menuslogo menusleft-comment">
               <BiCommentDetail />
@@ -77,14 +88,12 @@ function Feeds() {
         <div className="feed-likebox">
           <div className="liker-profile">Jh</div>
           <div className="like-counter">
-            <span className="bold">jeonghoon</span>님 외{" "}
-            <span className="bold">4</span>명이 좋아합니다.
+            <span className="bold">{f.userName}</span>님 외{" "}
+            <span className="bold">{f.likedNum}</span>명이 좋아합니다.
           </div>
         </div>
         <div className="feed-descripton">
-          <span className="bold">JustCode</span> "저스트코드는 단순 교육업체가
-          아닌 개발자 커뮤니티입니다. Justcode에서 배우고 저는 총 5개 회사에서
-          오퍼를 받았습니다." - 졸업생...{" "}
+          <span className="bold">{f.userName}</span> {f.content}
           <span className="blur more">더 보기</span>
           <div className="blur timestamp">54분 전</div>
         </div>
@@ -100,6 +109,9 @@ function Feeds() {
           </form>
         </div>
       </article>
+
+      )})}
+      
     </div>
   );
 }

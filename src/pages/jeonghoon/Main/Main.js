@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Main.scss";
 import "../../../styles/variables.scss";
-import Nav from "../../../components/Nav/Nav";
+import Nav from "../../../components/NavJh/Nav";
 import Feeds from "./Feeds";
 import Aside from "./Aside";
 

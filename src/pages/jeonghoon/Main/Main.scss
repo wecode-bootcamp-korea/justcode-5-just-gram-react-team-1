@@ -1,4 +1,3 @@
-// 초기에 reset.css 적용을 하지않아 불가피하게 스타일링을 위해 추가한 아이디셀렉터!
 #root {
   position: absolute;
   width: 100%;
@@ -7,6 +6,9 @@
 .main {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
   background-color: rgba(249, 249, 249, 0.962);
+}
+
+@media (max-width: 768px) {
+  main.main{width: 100%;}
 }
