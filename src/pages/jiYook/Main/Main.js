@@ -1,5 +1,6 @@
 import React from 'react';
 import './Main.scss';
+import '../../../styles/reset.scss';
 
 function Main() {
   return (
@@ -21,7 +22,7 @@ function Main() {
         </div>
       </div>
 
-      <div className='main'>
+      <div className='main-main'>
         <div className='feeds'>
           <div className='article'>
             <div className='article-header'>
@@ -34,9 +35,10 @@ function Main() {
                   <img
                     id='user-img'
                     src='images/jiYook/zhan-zhang-e5thHbI70uw-unsplash.jpg'
+                    alt='user img'
                   />
                 </span>
-                <span className='header-user' id='header-use-text'>
+                <span className='header-user' id='header-user-text'>
                   user id
                 </span>
               </div>
@@ -66,7 +68,7 @@ function Main() {
                 <img
                   className='likes-profile'
                   src='images/jiYook/shifaaz-shamoon-9K9ipjhDdks-unsplash.jpg'
-                  alt='user photo'
+                  alt='likes profile'
                 />
               </div>
               <p>

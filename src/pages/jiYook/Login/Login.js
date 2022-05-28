@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.scss';
+import '../../../styles/reset.scss';
 
 function Login() {
   const navigate = useNavigate();
@@ -64,7 +65,10 @@ function Login() {
         >
           로그인
         </button>
-        <a className='forgotPassword'>비밀번호를 잊으셨나요?</a>
+
+        <Link className='forgotPassword' to='/login-Jy'>
+          비밀번호를 잊으셨나요?
+        </Link>
       </form>
     </div>
   );
