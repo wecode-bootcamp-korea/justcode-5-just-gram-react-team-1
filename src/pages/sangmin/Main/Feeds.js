@@ -76,17 +76,3 @@ function Feeds() {
 }
 
 export default Feeds;
-
-/*<ul id="comment-list">
-    <li><span className="comment-id">sangmin</span><span className="comment-content"> justgram page test중</span></li>
-    <li className="comment-li">
-        <div>
-            <span className="comment-id">id1</span>
-            <span className="comment-content"> 댓글 테스트 1</span>
-        </div>
-        <div>
-            <i className="fa-regular fa-heart"></i>
-            <i className="fa-regular fa-trash-can"></i>
-        </div>
-    </li>
-</ul>*/

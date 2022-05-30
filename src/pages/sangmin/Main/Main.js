@@ -4,11 +4,11 @@ import Nav from './Nav'
 import Feeds from './Feeds'
 import Mainright from './Mainright'
 
-function Main() {
+function MainSm() {
     return (
         <div className="Main">
             <Nav />
-            <main>
+            <main className="feeds-mainright">
                 <Feeds />
                 <Mainright />
             </main>
@@ -17,4 +17,4 @@ function Main() {
 
 }
 
-export default Main;
+export default MainSm;
