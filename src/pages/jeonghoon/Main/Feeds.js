@@ -45,7 +45,7 @@ function Feeds() {
     event.target.reset();
   };
   return (
-    <div className="feeds">
+    <div className="feeds-jh">
       {feed.map(f => 
         {return(
           <article className="article">
