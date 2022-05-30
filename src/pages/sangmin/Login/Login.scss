@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+.Login{
+  height: 100vh;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .login-background{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width : 350px;
+    border : 1px solid #dbdbdb;
+
+    .logo-box{
+      display: flex;
+      justify-content: center;
+
+      .logo{
+        font-family: 'Lobster', cursive;
+        font-size: 50px;
+        margin : 40px 0;
+      }
+      
+      &:hover{
+        cursor: pointer;
+      }
+      
+    }
+
+    .login-box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width : 270px;
+
+      
+
+      .id-box{
+        display: flex;
+        justify-content: center;
+      }
+
+      input{
+        background-color: #fafafa;
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+        width : 270px;
+        padding : 10px;
+        margin-bottom : 5px;
+
+        &::placeholder{
+          color: #8e8e8e;
+        }
+
+        &:focus{
+          outline: none;
+        }
+      }
+      .pw-box{
+        display: flex;
+        justify-content: center;
+      }
+
+      .loginButton-box{
+        display: flex;
+        justify-content: center;
+
+        button{
+          color: white;
+          background-color: #0195f7;
+          width : 270px;
+          margin : 10px 0;
+          border : 0;
+          border-radius: 5px;
+          padding: 5px 0;
+          font-size: 15px;
+          font-weight: bold;
+          opacity: 0.4;
+
+          &.active{
+            opacity: 1;
+          }
+
+          &.inactive{
+            opacity: 0.4;
+          }
+
+
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .prob-box{
+      display: flex;
+      justify-content: center;
+
+      .prob{
+        text-decoration: none;
+        margin-top: 60px;
+        margin-bottom: 30px;
+        color: #375184;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
