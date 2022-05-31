@@ -10,10 +10,9 @@ function Login(){
         password: ""
     })
     const handleInputsByName = (e)=>{
-        const { value, name } = e.target;
         setInputs({
             ...inputs, 
-            [name]: value
+            [e.target.name]: e.target.value,
         });
         checkValidation();
     }
@@ -26,12 +25,13 @@ function Login(){
         return false;
     };
 
-    const handleSignUp = () =>{
+    const handleSignUp = (event) =>{
+        event.preventDefault();
         fetch("http://52.79.143.176:8000/users/signup", {
             method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({
                 email: inputs.identify,
                 password: inputs.password,
@@ -41,25 +41,38 @@ function Login(){
         .then((result) => console.log("결과: ", result));
     }
 
-    const handleLogin = () =>{
+    const handleLogin = (event) =>{
+        event.preventDefault();
         fetch("http://52.79.143.176:8000/users/login", {
             method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({
                 email: inputs.identify,
                 password: inputs.password,
             }),
         })
-        .then((response) => response.json())
-        .then((result) => {
-            if(result.message.includes("SUCCESS")){
+        .then((response) => {
+            // console.log(response.status);
+            if( response.status === 200 ){
                 navigate("/main-Sj");
             } else {
-                console.log(result)
-                alert("로그인/비밀번호를 확인해주세요")
+                alert("로그인/비밀번호를 확인해주세요");
             }
+            return response.json();
+        })
+        .then((result) => {
+            // console.log(result);
+            // localStorage.getItem("token");
+
+            if(result.message.includes("SUCCESS")){
+                localStorage.setItem("token", result.token);
+            } else {
+                // console.log(result)
+                localStorage.setItem("token", "");
+            }
+            // console.log(localStorage);
         });
 
         // hissujinc@gmail.com
@@ -74,7 +87,7 @@ function Login(){
             <div className={styles.login_wrap}>
                 <div className={styles.top}>
                     <h1 className={styles.logo}><span className={styles.txt}>Justgram</span></h1>
-                    <div className={styles.login_input}>
+                    <form className={styles.login_input}>
                         <input type="text" 
                             name="identify" 
                             id="identify" 
@@ -96,7 +109,7 @@ function Login(){
                                 회원가입
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <Link to="#" onClick={e => e.preventDefault()}>비밀번호를 잊으셨나요?</Link>
             </div>

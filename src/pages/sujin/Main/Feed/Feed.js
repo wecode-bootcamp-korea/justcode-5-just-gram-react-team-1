@@ -8,13 +8,15 @@ function Feed(){
 
     const [feedList, setFeedList] = useState([]);
     useEffect(() => {
-        fetch('/data/feedData.json', {
+        fetch('/data/feedCommentData.json', {
             method: 'GET' 
         })           
         .then(res => res.json())
         .then(data => {
             // console.log(data);
             setFeedList(data);
+            // setCommentList.concat(data);
+            // console.log(data);
         });
     },[])
 
@@ -32,42 +34,48 @@ function Feed(){
     }
 
     const [commentList, setCommentList] = useState([]);
-    useEffect(() => {
-        fetch('/data/commentData.json', {
-            method: 'GET' 
-        })           
-        .then(res => res.json())
-        .then(data => {
-            setCommentList(data);
-        });
-    },[])
+    // useEffect(() => {
+    //     fetch('/data/feedCommentData.json', {
+    //         method: 'GET' 
+    //     })           
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         setCommentList(data);
+    //     });
+    // },[])
 
     const getComment = (e) => {
         setText(e.target.value);
     };
     
     const addComment = (comment) => {
+        console.log(commentList);
         setCommentList((commentList) => [
             ...commentList,
             {
+                id: commentList.length +1,
                 userName: "Sujin Choi",
-                comment: comment,
+                content: comment,
+                isLiked: false,
             },
         ]);
         setText("");
     };
     
-
     const commentClickBtn = (event) => {
         event.preventDefault();
         addComment(text);
     }
 
+    const commentRemove = (id) => {
+        setCommentList(commentList.filter((_, id) => id !== id));
+    }
+
     return(
         <div className="feeds_stn">
-            {feedList.map((feed, idx) => {
+            {feedList.map((feed) => {
                 return(
-                    <article key={idx}>
+                    <article key={feed.id}>
                         <div className="feeds_header">
                             <div className="feeds_profile">
                                 <Link to="#" onClick={e => e.preventDefault()}>
@@ -111,20 +119,18 @@ function Feed(){
                                         <button type="button" className="color_darkGray">더 보기</button>
                                     </div>
                                     <div className="comments">
-                                        {commentList.map((comment, idx) => {
+                                        {feed.comments.map((comment) => {
                                             return (
                                                 <Comment
-                                                    key={idx}
+                                                    key={comment.id}
+                                                    id={comment.id}
                                                     name={comment.userName}
                                                     content={comment.content}
                                                     liked={comment.isLiked}
-                                                    comment={comment.comment}
+                                                    deleteEvent={commentRemove}
                                                 />
                                             );
                                         })}
-                                        {/* {tags.map((tag,index) => (
-                                            <Comments key={index} tag={tag} />
-                                        ))} */}
                                     </div>
                                     <p className="color_darkGray">42분 전</p>
                                 </div>
