@@ -9,7 +9,7 @@ import { BsThreeDots, BsBookmarkFill } from "react-icons/bs";
 function Feeds() {
   const commentText = [];
   const [commentList, setCommentList] = useState([]);
-  const [feed, setFeed] = useState([]);
+  const [feeds, setFeed] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/data/commentData.json")
@@ -46,7 +46,7 @@ function Feeds() {
   };
   return (
     <div className="feeds-jh">
-      {feed.map(f => 
+      {feeds.map(feed => 
         {return(
           <article className="article">
         <div className="feed-titlebox">
@@ -54,9 +54,9 @@ function Feeds() {
             <div className="feed-titlelogo">JH</div>
             <div className="feed-title">
               <div className="title-name">{
-              f.userName          
+              feed.userName          
               }</div>
-              <div className="title-author">{f.userName}</div>
+              <div className="title-author">{feed.userName}</div>
             </div>
           </div>
 
@@ -65,11 +65,11 @@ function Feeds() {
           </div>
         </div>
         <div className="feed-img">
-          <img src={f.feedImage} alt="feed" />
+          <img src={feed.feedImage} alt="feed" />
         </div>
         <div className="feed-menus">
           <div className="feed-menusleft">
-            <span className="menuslogo menusleft-heart">{f.isLiked ===true ? <AiTwotoneHeart /> : <AiOutlineHeart /> }
+            <span className="menuslogo menusleft-heart">{feed.isLiked ===true ? <AiTwotoneHeart /> : <AiOutlineHeart /> }
             </span>
             <span className="menuslogo menusleft-comment">
               <BiCommentDetail />
@@ -88,12 +88,12 @@ function Feeds() {
         <div className="feed-likebox">
           <div className="liker-profile">Jh</div>
           <div className="like-counter">
-            <span className="bold">{f.userName}</span>님 외{" "}
-            <span className="bold">{f.likedNum}</span>명이 좋아합니다.
+            <span className="bold">{feed.userName}</span>님 외{" "}
+            <span className="bold">{feed.likedNum}</span>명이 좋아합니다.
           </div>
         </div>
         <div className="feed-descripton">
-          <span className="bold">{f.userName}</span> {f.content}
+          <span className="bold">{feed.userName}</span> {feed.content}
           <span className="blur more">더 보기</span>
           <div className="blur timestamp">54분 전</div>
         </div>

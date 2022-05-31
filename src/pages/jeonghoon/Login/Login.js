@@ -32,7 +32,7 @@ function Login() {
   const valid = validation(identify, password);
 
   return (
-    <div className="login_container">
+    <div className="login_container-Jh">
       <div className="login_logo">JUSTGRAM</div>
       <form className="login_form">
         <input
