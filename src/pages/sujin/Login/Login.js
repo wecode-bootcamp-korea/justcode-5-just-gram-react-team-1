@@ -4,9 +4,6 @@ import styles from './Login.module.scss';
 
 function Login(){
     const navigate = useNavigate();
-    const goToMain = () => {
-        navigate("/main-Sj");
-    };
 
     const [inputs, setInputs] = useState({
         identify:"",
@@ -58,8 +55,9 @@ function Login(){
         .then((response) => response.json())
         .then((result) => {
             if(result.message.includes("SUCCESS")){
-                goToMain()
+                navigate("/main-Sj");
             } else {
+                console.log(result)
                 alert("로그인/비밀번호를 확인해주세요")
             }
         });

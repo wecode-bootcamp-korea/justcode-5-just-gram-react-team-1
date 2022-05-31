@@ -1,12 +1,10 @@
 import React, {useState, useRef, useEffect} from "react";
 import { Link } from "react-router-dom";
-import Comments from "../Comment/Comments";
 import Comment from "../Comment/Comment";
 import './Feed.scss';
 
 function Feed(){
     const [text, setText] = useState("");
-    const [tags, setTags] = useState([]);
 
     const [feedList, setFeedList] = useState([]);
     useEffect(() => {
@@ -20,10 +18,6 @@ function Feed(){
         });
     },[])
 
-    const handleChange = (e) =>{
-        setText(e.target.value);
-        checkValue();   
-    }
     const checkValue = () =>{
         if( text !==  "" ){
             return true;
@@ -31,36 +25,27 @@ function Feed(){
         return false;
     }
     const handelKeyDown = (e) => {
-        // commentText[0] = e.target.value;
         if ( e.target.value.length !== 0 && e.key === 'Enter') {
             // setTags([...tags, text]);
-            console.log(text);
+            // console.log(text);
             addComment(text);
             // setText("");
         }
     }
 
-
     const [commentList, setCommentList] = useState([]);
-    const commentInput = useRef(null);
-    function handleCommentFocus(){
-        commentInput.current.focus();
-    }
     useEffect(() => {
         fetch('/data/commentData.json', {
             method: 'GET' 
         })           
         .then(res => res.json())
         .then(data => {
-            // console.log(data);
             setCommentList(data);
         });
     },[])
 
-    const commentText = [];
     const getComment = (e) => {
         setText(e.target.value);
-        // commentText[0] = text;
     };
     
     const addComment = (comment) => {
@@ -74,22 +59,10 @@ function Feed(){
         setText("");
     };
     
-    // const commentUpdate = (event) => {
-    //     event.preventDefault();
-    // //      addComment(commentText[0])`;
-    // //     addComment(text);
-    //     // commentText[0] = "";
-    //     // event.target.reset();
-    // };
 
     const commentClickBtn = (event) => {
-        // console.log(e)
         event.preventDefault();
-        // setTags([...tags, text]);
         addComment(text);
-        // console.log(text);
-        // setText("");
-        // handleCommentFocus();
     }
 
     return(
@@ -159,20 +132,18 @@ function Feed(){
                                 </div>
                             </div>
                             <div className="feeds_comments">
-                                    <input className="comment_input" 
-                                        type="text" 
-                                        placeholder="댓글 달기" 
-                                        onChange={getComment} 
-                                        onKeyPress={handelKeyDown}
-                                        value={text}
-                                        ref={commentInput}
-                                    />
-                                    <button type="button" 
-                                        className="btn_addComment" 
-                                        onClick={commentClickBtn} 
-                                        disabled={checkValue() === true ? false : true}
-                                    >게시</button>
-                                {/* </form> */}
+                                <input className="comment_input" 
+                                    type="text" 
+                                    placeholder="댓글 달기" 
+                                    onChange={getComment} 
+                                    onKeyPress={handelKeyDown}
+                                    value={text}
+                                />
+                                <button type="button" 
+                                    className="btn_addComment" 
+                                    onClick={commentClickBtn} 
+                                    disabled={checkValue() === true ? false : true}
+                                >게시</button>
                             </div>
                         </div>
                     </article>
