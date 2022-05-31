@@ -18,23 +18,38 @@ function Login() {
     return true;
   };
 
-  const buttonOnClick = () => {
-    if (validation(identify, password)) {
-      alert("로그인 되었습니다.");
-      navigate("/main-Jh");
-    } else {
-      alert("로그인에 실패하였습니다.");
-      setIdentify("");
-      setPassword("");
-    }
-  };
-
+  const buttonOnClick = (event) => {
+    event.preventDefault();
+    
+    fetch("http://52.79.143.176:8000/users/login", {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify({
+            email: identify,
+            password: password,
+        }),
+    })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result)
+            if(result.message.includes("SUCCESS")){
+                alert('로그인 되었습니다.');
+                navigate('/main-Jh');
+            }
+            else{
+                alert('아이디나 패스워드를 확인해주세요!');
+            }
+        });
+}
+  
   const valid = validation(identify, password);
 
   return (
     <div className="login_container-Jh">
       <div className="login_logo">JUSTGRAM</div>
-      <form className="login_form">
+      <form onSubmit={buttonOnClick} className="login_form">
         <input
           className="login_input"
           name="identify"
@@ -59,7 +74,6 @@ function Login() {
         <button
           className={valid ? "login_button active" : "login_button inactive"}
           disabled={!valid}
-          onClick={buttonOnClick}
         >
           로그인
         </button>
