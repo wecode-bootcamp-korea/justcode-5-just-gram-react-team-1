@@ -2,7 +2,7 @@ import "./Aside.scss";
 
 function Aside() {
   return (
-    <aside className="aside">
+    <aside className="aside-jh">
       <div className="side-titlebox">
         <div className="side-titlelogo">JH</div>
         <div className="side-title">
