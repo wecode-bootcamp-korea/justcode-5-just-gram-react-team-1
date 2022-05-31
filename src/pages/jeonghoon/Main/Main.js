@@ -10,7 +10,7 @@ function Main() {
   return (
     <>
       <Nav />
-      <main className="main">
+      <main className="main-Jh">
         <Feeds />
         <Aside />
       </main>

@@ -1,14 +1,16 @@
-.feeds {
+
+.feeds-jh {
   margin-right: 15px;
   padding: 0px 8px 20px 8px;
+  margin-top: 60px;
   width: 800px;
-  height: 900px;
+  height: 1000px;
   overflow: auto;
 
   .article {
     display: flex;
     flex-direction: column;
-    
+    height: 900px;
     border: 3px solid #ddd;
     background-color: white;
 
@@ -59,7 +61,7 @@
       justify-content: space-between;
 
       .feed-menusleft {
-        display: flex;
+        display: inline;
 
         .menuslogo {
           margin-left: 12px;
@@ -170,10 +172,6 @@
     }
   }
 }
-@media screen and (max-width: 1200px){
-  .nav .navbar{width:100%;}
-}
-
 @media (max-width: 768px) {
   aside.aside{display: none;}
 }
