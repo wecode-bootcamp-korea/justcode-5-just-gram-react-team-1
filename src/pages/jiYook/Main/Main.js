@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import "./Main.scss";
-import { useState } from "react";
-//import Comments from "./Comments";
 import CommentBoard from "./ComentBoard";
 
 function Main() {
-  //const [text, setText] = useState("");
-  //const [tags, setTags] = useState([]);
+  const [text, setText] = useState("");
+  const [tags, setTags] = useState([]);
 
   const [inputValue, setInputValue] = useState("");
   const [comment, setComment] = useState("");
@@ -14,6 +12,44 @@ function Main() {
   const addItem = () => {
     //console.log("i'm here!!", inputValue);
     setComment([...comment, inputValue]);
+  };
+
+  const searchInput = useRef(null);
+  useLayoutEffect(() => {
+    if (searchInput.current !== null) searchInput.current.focus();
+  });
+  const inputClear = () => {
+    searchInput.current.value = "";
+  };
+
+  const commentInput = useRef(null);
+  function handleCommentFocus() {
+    commentInput.current.focus();
+  }
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+    checkValue();
+  };
+
+  const checkValue = () => {
+    if (text !== "") {
+      return true;
+    }
+    return false;
+  };
+
+  const handelKeyDown = (e) => {
+    if (e.target.value.length !== 0 && e.key === "Enter") {
+      setTags([...tags, text]);
+      setText("");
+    }
+  };
+
+  const commentClickBtn = () => {
+    setTags([...tags, text]);
+    setText("");
+    handleCommentFocus();
   };
 
   return (
@@ -95,7 +131,9 @@ function Main() {
               <span className="more">더 보기..</span>
             </div>
 
-            <CommentBoard comment={comment} />
+            {tags.map((tag, index) => (
+              <CommentBoard key={index} tag={tag} />
+            ))}
 
             <div className="article-input-comments">
               <i className="fa-regular fa-face-smile"></i>
@@ -105,10 +143,16 @@ function Main() {
                   type="text"
                   placeholder="댓글 달기..."
                   id="comment_input"
-                  value={inputValue}
-                  onChange={(event) => setInputValue(event.target.value)}
+                  value={text}
+                  onChange={handleChange}
+                  onKeyPress={handelKeyDown}
+                  ref={commentInput}
                 />
-                <button onClick={addItem} className="comment-submit">
+                <button
+                  type="button"
+                  onClick={commentClickBtn}
+                  className="comment-submit"
+                >
                   게시
                 </button>
               </div>
