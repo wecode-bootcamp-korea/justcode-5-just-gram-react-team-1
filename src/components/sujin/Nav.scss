@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import '../../styles/variables.scss';
 
-#main {
+#mainSj {
     nav{ position:fixed; top:0; width:100%; background:#fff; border-bottom:1px solid #eaeaea; z-index:1;
 
         .cont{ @include flexSpaceBetween; width:980px; margin:0 auto; padding:20px 0; }
@@ -58,7 +58,7 @@
 }
 
 @media screen and (max-width: 980px) {
-    #main{
+    #mainSj{
         nav{ padding:0 12px; 
             .cont{ width:100%; }
         }
@@ -66,7 +66,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    #main{
+    #mainSj{
         nav .cont{ padding:12px 0; 
             .logo {
                 .ico_logo{ width:20px; height:20px; }

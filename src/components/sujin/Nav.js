@@ -3,7 +3,7 @@ import React, {useState, useRef, useLayoutEffect} from "react";
 import { Link } from "react-router-dom";
 import './Nav.scss';
 
-export default function Nav(){
+function Nav(){
 
     const [serachInputActive, setSerachInputActive] = useState("false");
     const serachInputToggle = () => {
@@ -99,3 +99,4 @@ export default function Nav(){
         </nav>
     );
 }
+export default Nav;

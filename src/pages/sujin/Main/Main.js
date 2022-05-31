@@ -4,9 +4,9 @@ import Feed from "./Feed/Feed";
 import Aside from "./Aside/Aside";
 import './Main.scss';
 
-export default function Main(){
+function Main(){
     return(
-        <section id="main">
+        <section id="mainSj">
             <Nav />
             <main>
                 <Feed />
@@ -15,3 +15,5 @@ export default function Main(){
         </section>
     );
 }
+
+export default Main;

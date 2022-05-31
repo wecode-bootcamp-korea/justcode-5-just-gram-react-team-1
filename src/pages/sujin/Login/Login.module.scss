@@ -6,8 +6,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
-// *, ::before, ::after { box-sizing:border-box; border-width:0; border-style:solid; }
-
 #login{ 
     button, input, optgroup, select, textarea { font-family:inherit; font-size:100%; line-height:inherit; color:inherit; margin:0; padding:0; border-width:0; }
     button, select { text-transform:none; }
@@ -41,12 +39,15 @@
                 &:focus{ outline:none; }
             }
             input + input{ margin-top:8px; }
-    
-            button{ 
-                display:flex; align-items:center; justify-content:center; width:100%; height:30px; margin-top:16px; background:rgb(0, 149, 246); border-radius:4px; color:#fff; font-size:14px; cursor:pointer; 
-                
-                &:disabled{ background:rgba(0, 149, 246, 0.3); cursor:default; }
+            
+            .btn_area{ display:flex; justify-content:space-between;
+                button{ 
+                    display:flex; align-items:center; justify-content:center; width:48%; height:30px; margin-top:16px; background:rgb(0, 149, 246); border-radius:4px; color:#fff; font-size:14px; cursor:pointer; 
+                    
+                    &:disabled{ background:rgba(0, 149, 246, 0.3); cursor:default; }
+                }
             }
+            
         }
     
         &>a{ color:#00376b; }

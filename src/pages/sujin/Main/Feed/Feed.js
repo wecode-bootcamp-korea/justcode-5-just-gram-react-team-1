@@ -4,16 +4,9 @@ import Comments from "../Comment/Comments";
 import Comment from "../Comment/Comment";
 import './Feed.scss';
 
-export default function Feed(){
+function Feed(){
     const [text, setText] = useState("");
     const [tags, setTags] = useState([]);
-
-    const [commentList, setCommentList] = useState([]);
-
-    const commentInput = useRef(null);
-    function handleCommentFocus(){
-        commentInput.current.focus();
-    }
 
     const [feedList, setFeedList] = useState([]);
     useEffect(() => {
@@ -37,20 +30,22 @@ export default function Feed(){
         }
         return false;
     }
-
     const handelKeyDown = (e) => {
+        // commentText[0] = e.target.value;
         if ( e.target.value.length !== 0 && e.key === 'Enter') {
-            setTags([...tags, text]);
-            setText("");
+            // setTags([...tags, text]);
+            console.log(text);
+            addComment(text);
+            // setText("");
         }
     }
 
-    const commentClickBtn = () => {
-        setTags([...tags, text]);
-        setText("");
-        handleCommentFocus();
-    }
 
+    const [commentList, setCommentList] = useState([]);
+    const commentInput = useRef(null);
+    function handleCommentFocus(){
+        commentInput.current.focus();
+    }
     useEffect(() => {
         fetch('/data/commentData.json', {
             method: 'GET' 
@@ -62,11 +57,46 @@ export default function Feed(){
         });
     },[])
 
+    const commentText = [];
+    const getComment = (e) => {
+        setText(e.target.value);
+        // commentText[0] = text;
+    };
+    
+    const addComment = (comment) => {
+        setCommentList((commentList) => [
+            ...commentList,
+            {
+                userName: "Sujin Choi",
+                comment: comment,
+            },
+        ]);
+        setText("");
+    };
+    
+    // const commentUpdate = (event) => {
+    //     event.preventDefault();
+    // //      addComment(commentText[0])`;
+    // //     addComment(text);
+    //     // commentText[0] = "";
+    //     // event.target.reset();
+    // };
+
+    const commentClickBtn = (event) => {
+        // console.log(e)
+        event.preventDefault();
+        // setTags([...tags, text]);
+        addComment(text);
+        // console.log(text);
+        // setText("");
+        // handleCommentFocus();
+    }
+
     return(
         <div className="feeds_stn">
-            {feedList.map(feed => {
+            {feedList.map((feed, idx) => {
                 return(
-                    <article key={feed.id}>
+                    <article key={idx}>
                         <div className="feeds_header">
                             <div className="feeds_profile">
                                 <Link to="#" onClick={e => e.preventDefault()}>
@@ -110,37 +140,39 @@ export default function Feed(){
                                         <button type="button" className="color_darkGray">더 보기</button>
                                     </div>
                                     <div className="comments">
-                                        {commentList.map(comment => {
+                                        {commentList.map((comment, idx) => {
                                             return (
                                                 <Comment
-                                                    key={comment.id}
+                                                    key={idx}
                                                     name={comment.userName}
-                                                    comment={comment.content}
+                                                    content={comment.content}
                                                     liked={comment.isLiked}
+                                                    comment={comment.comment}
                                                 />
                                             );
                                         })}
-                                        {tags.map((tag,index) => (
+                                        {/* {tags.map((tag,index) => (
                                             <Comments key={index} tag={tag} />
-                                        ))}
+                                        ))} */}
                                     </div>
                                     <p className="color_darkGray">42분 전</p>
                                 </div>
                             </div>
                             <div className="feeds_comments">
-                                <input className="comment_input" 
-                                    type="text" 
-                                    placeholder="댓글 달기" 
-                                    onChange={handleChange} 
-                                    onKeyPress={handelKeyDown}
-                                    value={text}
-                                    ref={commentInput}
-                                />
-                                <button type="button" 
-                                    className="btn_addComment" 
-                                    onClick={commentClickBtn} 
-                                    disabled={checkValue() === true ? false : true}
-                                >게시</button>
+                                    <input className="comment_input" 
+                                        type="text" 
+                                        placeholder="댓글 달기" 
+                                        onChange={getComment} 
+                                        onKeyPress={handelKeyDown}
+                                        value={text}
+                                        ref={commentInput}
+                                    />
+                                    <button type="button" 
+                                        className="btn_addComment" 
+                                        onClick={commentClickBtn} 
+                                        disabled={checkValue() === true ? false : true}
+                                    >게시</button>
+                                {/* </form> */}
                             </div>
                         </div>
                     </article>
@@ -149,3 +181,5 @@ export default function Feed(){
         </div>
     );
 }
+
+export default Feed;
