@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Login.scss';
-import '../../../styles/reset.scss';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Login.scss";
+import "../../../styles/reset.scss";
 
 function Login() {
   const navigate = useNavigate();
-  const [identify, setIdentify] = useState('');
-  const [password, setPassword] = useState('');
+  const [identify, setIdentify] = useState("");
+  const [password, setPassword] = useState("");
 
   const validation = (idText, pwText) => {
-    if (!idText.includes('@')) {
+    if (!idText.includes("@")) {
       return false;
     }
     if (pwText.length < 7) {
@@ -22,10 +22,10 @@ function Login() {
   const handleLogin = () => {
     console.log(1);
 
-    fetch('http://52.79.143.176:8000/users/login', {
-      method: 'POST',
+    fetch("http://52.79.143.176:8000/users/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: identify,
@@ -33,7 +33,7 @@ function Login() {
       }),
     })
       .then((response) => response.json())
-      .then((result) => console.log('결과: ', result));
+      .then((result) => console.log("결과: ", result));
   };
 
   /*
@@ -55,40 +55,40 @@ function Login() {
   };
 
   return (
-    <form className='loginWindow' onSubmit={prevent}>
-      <div className='login-container'>
-        <h1 className='logo'>Justgram</h1>
+    <form className="loginWindow" onSubmit={prevent}>
+      <div className="login-container">
+        <h1 className="logo">Justgram</h1>
         <input
-          id='id'
-          className='input'
-          name='identify'
-          type='text'
-          placeholder='전화번호, 사용자 이름 또는 이메일'
+          id="id"
+          className="input"
+          name="identify"
+          type="text"
+          placeholder="전화번호, 사용자 이름 또는 이메일"
           value={identify}
           onChange={(event) => {
             setIdentify(event.target.value);
           }}
         />
         <input
-          id='pw'
-          className='input'
-          name='password'
-          type='password'
-          placeholder='비밀번호'
+          id="pw"
+          className="input"
+          name="password"
+          type="password"
+          placeholder="비밀번호"
           value={password}
           onChange={(event) => {
             setPassword(event.target.value);
           }}
         />
         <button
-          className={valid ? 'login_button active' : 'login_button inactive'}
+          className={valid ? "login_button active" : "login_button inactive"}
           disabled={!valid}
           onClick={handleLogin}
         >
           로그인
         </button>
 
-        <Link className='forgotPassword' to='/login-Jy'>
+        <Link className="forgotPassword" to="/login-Jy">
           비밀번호를 잊으셨나요?
         </Link>
       </div>
