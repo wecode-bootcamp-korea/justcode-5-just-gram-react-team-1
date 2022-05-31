@@ -1,8 +1,12 @@
 import React from 'react';
 import './Main.scss';
-import '../../../styles/reset.scss';
+import { useState } from 'react';
+import Comments from './Comments';
 
 function Main() {
+  const [text, setText] = useState('');
+  const [tags, setTags] = useState([]);
+
   return (
     <div className='main-container'>
       <div className='nav-box'>

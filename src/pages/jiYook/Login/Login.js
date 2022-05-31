@@ -19,6 +19,24 @@ function Login() {
     return true;
   };
 
+  const handleLogin = () => {
+    console.log(1);
+
+    fetch('http://52.79.143.176:8000/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: identify,
+        password: password,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log('결과: ', result));
+  };
+
+  /*
   const buttonOnClick = () => {
     if (validation(identify, password)) {
       alert('로그인 되었습니다.');
@@ -28,13 +46,17 @@ function Login() {
       setIdentify('');
       setPassword('');
     }
-  };
+  };*/
 
   const valid = validation(identify, password);
 
+  const prevent = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className='loginWindow'>
-      <form className='login-container'>
+    <form className='loginWindow' onSubmit={prevent}>
+      <div className='login-container'>
         <h1 className='logo'>Justgram</h1>
         <input
           id='id'
@@ -61,7 +83,7 @@ function Login() {
         <button
           className={valid ? 'login_button active' : 'login_button inactive'}
           disabled={!valid}
-          onClick={buttonOnClick}
+          onClick={handleLogin}
         >
           로그인
         </button>
@@ -69,8 +91,8 @@ function Login() {
         <Link className='forgotPassword' to='/login-Jy'>
           비밀번호를 잊으셨나요?
         </Link>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 }
 
