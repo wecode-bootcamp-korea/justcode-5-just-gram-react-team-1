@@ -26,10 +26,8 @@ function Feed(){
     }
     const handelKeyDown = (e) => {
         if ( e.target.value.length !== 0 && e.key === 'Enter') {
-            // setTags([...tags, text]);
             // console.log(text);
             addComment(text);
-            // setText("");
         }
     }
 
