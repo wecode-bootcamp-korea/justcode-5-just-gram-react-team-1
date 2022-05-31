@@ -6,7 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
-#main{ 
+#mainSj{ 
     button, input, optgroup, select, textarea { font-family:inherit; font-size:100%; line-height:inherit; color:inherit; margin:0; padding:0; border-width:0; }
     button, select { text-transform:none; }
     button, [type='button'], [type='reset'], [type='submit'] { -webkit-appearance:button; background-color:transparent; background-image:none; }
@@ -26,18 +26,17 @@
         &::before{ position:absolute; left:0; top:6px; content:''; display:block; width:2px; height:32px; background:#000; }
     }
 
-    main{ display:flex; justify-content:space-between; width:940px; margin:0  auto; padding-top:85px; 
-    }
+    main{ display:flex; justify-content:space-between; width:940px; margin:0  auto; padding-top:85px; }
 }
 
 @media screen and (max-width: 980px) {
-    #main {
+    #mainSj{
         main{ flex-direction:column; justify-content:center; width:100%; }
     }
 }
 
 @media screen and (max-width: 480px) {
-    #main{
+    #mainSj{
         main{ padding-top:70px; }    
     }
 }

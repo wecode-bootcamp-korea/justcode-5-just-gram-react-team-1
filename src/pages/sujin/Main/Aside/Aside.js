@@ -15,7 +15,7 @@ const FOOTER_INFO = [
     { id: 11, content: "언어" },
 ];
 
-export default function Aside() {
+function Aside() {
     return(
         <div className="main_right">
             <div className="profile_cont">
@@ -120,3 +120,5 @@ export default function Aside() {
         </div>
     )
 }
+
+export default Aside;

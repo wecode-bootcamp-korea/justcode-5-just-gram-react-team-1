@@ -1,11 +1,12 @@
 import React from "react";
 
-export default function Comment(props){
+function Comment(props){
     // console.log(props);
     return(
-        <div key={props.index}>
+        <div key={props.idx}>
             <p>
                 <b className="profile_name">{props.name}</b>
+                <span>{props.content}</span>
                 <span>{props.comment}</span>
             </p>
             <button type="button" className="btn_commDelete">
@@ -19,3 +20,4 @@ export default function Comment(props){
         </div>
     );
 }
+export default Comment;
