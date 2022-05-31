@@ -27,7 +27,7 @@ button {
       justify-content: space-between;
 
       .nav-logo-text {
-        font-family: 'Lobster', cursive;
+        font-family: "Lobster", cursive;
         font-size: 26px;
         color: #262626;
         margin-left: 16px;
@@ -63,8 +63,6 @@ button {
     display: flex;
     flex-direction: row;
     width: 935px;
-
-    /*background-color: violet;*/
 
     .article {
       width: 70%;
@@ -212,9 +210,6 @@ button {
     }
   }
   .main-right {
-    //display: flex;
-    //flex-direction: row;
-
     width: 30%;
     margin-left: 23px;
     border: 1px solid #e4e4e4;
