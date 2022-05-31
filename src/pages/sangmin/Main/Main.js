@@ -6,7 +6,7 @@ import Mainright from './Mainright'
 
 function MainSm() {
     return (
-        <div className="Main">
+        <div className="MainSm">
             <Nav />
             <main className="feeds-mainright">
                 <Feeds />

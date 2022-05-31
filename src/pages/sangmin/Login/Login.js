@@ -18,13 +18,35 @@ function Login() {
         return true;
     };
 
-    const buttonOnClick = () => {
+    /*const buttonOnClick = () => {
         if (validation(identify, password)) {
             alert('로그인 되었습니다.');
             navigate('/main');
         }
-    }
+    }*/
 
+    const buttonOnClick = () => {
+        fetch("http://52.79.143.176:8000/users/login", {
+            method: "POST",
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify({
+                email: identify,
+                password: password,
+            }),
+        })
+            .then((response) => response.json())
+            .then((result) => {
+                if(result.message.includes("SUCCESS")){
+                    alert('로그인 되었습니다.');
+                    navigate('/main-Sm');
+                }
+                else{
+                    alert('아이디나 패스워드를 확인해주세요!');
+                }
+            });
+    }
     
     const valid = validation(identify, password);
 
@@ -41,12 +63,12 @@ function Login() {
                         }} />
                     </div>
                     <div className="pw-box">
-                        <input id="password" type="password" placeholder="비밀번호" minLength={5} disabled={!valid} value={password} onChange={(e) => {
+                        <input id="password" type="password" placeholder="비밀번호" minLength={5} value={password} onChange={(e) => {
                             setPassword(e.target.value);
                         }} />
                     </div>
                     <div className="loginButton-box">
-                        <button className={valid ? 'button-login active' : 'button-login inactive'}  onClick={buttonOnClick}>로그인</button>
+                        <button className={valid ? 'button-login active' : 'button-login inactive'}  disabled={!valid} onClick={buttonOnClick}>로그인</button>
                     </div>
                 </div>
                 <div className="prob-box">
