@@ -17,13 +17,13 @@ function Comments({ commentid,userName,content,isLiked,commentDelte}) {
             <span className="newcomment-text">{content}</span>
             </div>
             <div>
-              <span onClick={clickL} className="newcomment-icons">
+              <button onClick={clickL} className="newcomment-icons">
               {!commentIsLiked?   
               <img style={{width:"15px",height:"15px"}} src="/images/jeonghoon/heart.png" alt="feed"/>  : <img style={{width:"15px",height:"15px"}} src="/images/jeonghoon/pinkHeart.png"/>}
-              </span>
-              <span className="newcomment-icons">
+              </button>
+              <button className="newcomment-icons">
                 <FiTrash onClick={()=>{handcomment(commentid)}} />
-              </span>
+              </button>
               </div>
           </li>    
   );
