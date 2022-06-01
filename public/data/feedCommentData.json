@@ -1,0 +1,402 @@
+[
+    {
+        "id": 1,
+        "userName": "ssujinc",
+        "feedImage": "https://cdn.pixabay.com/photo/2012/08/06/00/53/bridge-53769_640.jpg",
+        "content": "반갑습니다.1",
+        "likedNum" : 10,
+        "isLiked": true,
+        "comments":[
+            {
+                "id": 1,
+                "userName": "ssujinc",
+                "content": "반갑습니다.",
+                "isLiked": true
+            },
+            {
+                "id": 2,
+                "userName": "azure928",
+                "content": "포기 하고 싶다!",
+                "isLiked": false
+            },
+            {
+                "id": 3,
+                "userName": "Lemonade12",
+                "content": "hi hello bye",
+                "isLiked": true
+            },
+            {
+                "id": 4,
+                "userName": "Choi-jeonghoon",
+                "content": "못하겠다!!",
+                "isLiked": false
+            },
+            {
+                "id": 5,
+                "userName": "minuk3508",
+                "content": "what the code!",
+                "isLiked": true
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "userName": "azure928",
+        "feedImage": "https://cdn.pixabay.com/photo/2016/11/29/04/17/bonfire-1867275_960_720.jpg",
+        "content": "반갑습니다.2",
+        "likedNum" : 12,
+        "isLiked": true,
+        "comments":[
+            {
+                "id": 1,
+                "userName": "ssujinc",
+                "content": "반갑습니다.",
+                "isLiked": true
+            },
+            {
+                "id": 2,
+                "userName": "azure928",
+                "content": "포기 하고 싶다!",
+                "isLiked": false
+            },
+            {
+                "id": 3,
+                "userName": "Lemonade12",
+                "content": "hi hello bye",
+                "isLiked": false
+            },
+            {
+                "id": 4,
+                "userName": "Choi-jeonghoon",
+                "content": "못하겠다!!",
+                "isLiked": false
+            },
+            {
+                "id": 5,
+                "userName": "minuk3508",
+                "content": "what the code!",
+                "isLiked": false
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "userName": "Lemonade12",
+        "feedImage": "https://cdn.pixabay.com/photo/2016/01/05/17/51/maltese-1123016_960_720.jpg",
+        "content": "반갑습니다.3",
+        "likedNum" : 30,
+        "isLiked": true,
+        "comments":[
+            {
+                "id": 1,
+                "userName": "ssujinc",
+                "content": "반갑습니다.",
+                "isLiked": true
+            },
+            {
+                "id": 2,
+                "userName": "azure928",
+                "content": "포기 하고 싶다!",
+                "isLiked": false
+            },
+            {
+                "id": 3,
+                "userName": "Lemonade12",
+                "content": "hi hello bye",
+                "isLiked": false
+            },
+            {
+                "id": 4,
+                "userName": "Choi-jeonghoon",
+                "content": "못하겠다!!",
+                "isLiked": false
+            },
+            {
+                "id": 5,
+                "userName": "minuk3508",
+                "content": "what the code!",
+                "isLiked": false
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "userName": "Choi-jeonghoon",
+        "feedImage": "https://images.pexels.com/photos/3586966/pexels-photo-3586966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "content": "반갑습니다.4",
+        "likedNum" : 15,
+        "isLiked": true,
+        "comments":[
+            {
+                "id": 1,
+                "userName": "ssujinc",
+                "content": "반갑습니다.",
+                "isLiked": true
+            },
+            {
+                "id": 2,
+                "userName": "azure928",
+                "content": "포기 하고 싶다!",
+                "isLiked": false
+            },
+            {
+                "id": 3,
+                "userName": "Lemonade12",
+                "content": "hi hello bye",
+                "isLiked": false
+            },
+            {
+                "id": 4,
+                "userName": "Choi-jeonghoon",
+                "content": "못하겠다!!",
+                "isLiked": false
+            },
+            {
+                "id": 5,
+                "userName": "minuk3508",
+                "content": "what the code!",
+                "isLiked": false
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "userName": "minuk3508",
+        "feedImage": "https://cdn.pixabay.com/photo/2017/12/17/19/08/bridge-3024773_960_720.jpg",
+        "content": "반갑습니다.5",
+        "likedNum" : 10,
+        "isLiked": true,
+        "comments":[
+            {
+                "id": 1,
+                "userName": "ssujinc",
+                "content": "반갑습니다.",
+                "isLiked": true
+            },
+            {
+                "id": 2,
+                "userName": "azure928",
+                "content": "포기 하고 싶다!",
+                "isLiked": false
+            },
+            {
+                "id": 3,
+                "userName": "Lemonade12",
+                "content": "hi hello bye",
+                "isLiked": false
+            },
+            {
+                "id": 4,
+                "userName": "Choi-jeonghoon",
+                "content": "못하겠다!!",
+                "isLiked": false
+            },
+            {
+                "id": 5,
+                "userName": "minuk3508",
+                "content": "what the code!",
+                "isLiked": false
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "userName": "minuk3508",
+        "feedImage": "https://cdn.pixabay.com/photo/2019/02/06/15/18/puppy-3979350_960_720.jpg",
+        "content": "반갑습니다.6",
+        "likedNum" : 20,
+        "isLiked": true,
+        "comments":[
+            {
+                "id": 1,
+                "userName": "ssujinc",
+                "content": "반갑습니다.",
+                "isLiked": true
+            },
+            {
+                "id": 2,
+                "userName": "azure928",
+                "content": "포기 하고 싶다!",
+                "isLiked": false
+            },
+            {
+                "id": 3,
+                "userName": "Lemonade12",
+                "content": "hi hello bye",
+                "isLiked": false
+            },
+            {
+                "id": 4,
+                "userName": "Choi-jeonghoon",
+                "content": "못하겠다!!",
+                "isLiked": false
+            },
+            {
+                "id": 5,
+                "userName": "minuk3508",
+                "content": "what the code!",
+                "isLiked": false
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "userName": "minuk3508",
+        "feedImage": "https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "content": "반갑습니다.7",
+        "likedNum" : 10,
+        "isLiked": true,
+        "comments":[
+            {
+                "id": 1,
+                "userName": "ssujinc",
+                "content": "반갑습니다.",
+                "isLiked": true
+            },
+            {
+                "id": 2,
+                "userName": "azure928",
+                "content": "포기 하고 싶다!",
+                "isLiked": false
+            },
+            {
+                "id": 3,
+                "userName": "Lemonade12",
+                "content": "hi hello bye",
+                "isLiked": false
+            },
+            {
+                "id": 4,
+                "userName": "Choi-jeonghoon",
+                "content": "못하겠다!!",
+                "isLiked": false
+            },
+            {
+                "id": 5,
+                "userName": "minuk3508",
+                "content": "what the code!",
+                "isLiked": false
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "userName": "minuk3508",
+        "feedImage": "https://img.etoday.co.kr/pto_db/2017/12/20171220063334_1166711_600_476.jpg",
+        "content": "반갑습니다.8",
+        "likedNum" : 30,
+        "isLiked": true,
+        "comments":[
+            {
+                "id": 1,
+                "userName": "ssujinc",
+                "content": "반갑습니다.",
+                "isLiked": true
+            },
+            {
+                "id": 2,
+                "userName": "azure928",
+                "content": "포기 하고 싶다!",
+                "isLiked": false
+            },
+            {
+                "id": 3,
+                "userName": "Lemonade12",
+                "content": "hi hello bye",
+                "isLiked": false
+            },
+            {
+                "id": 4,
+                "userName": "Choi-jeonghoon",
+                "content": "못하겠다!!",
+                "isLiked": false
+            },
+            {
+                "id": 5,
+                "userName": "minuk3508",
+                "content": "what the code!",
+                "isLiked": false
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "userName": "minuk3508",
+        "feedImage": "https://cdn.pixabay.com/photo/2018/03/02/17/19/paris-3193674_960_720.jpg",
+        "content": "반갑습니다.9",
+        "likedNum" : 8,
+        "isLiked": true,
+        "comments":[
+            {
+                "id": 1,
+                "userName": "ssujinc",
+                "content": "반갑습니다.",
+                "isLiked": true
+            },
+            {
+                "id": 2,
+                "userName": "azure928",
+                "content": "포기 하고 싶다!",
+                "isLiked": false
+            },
+            {
+                "id": 3,
+                "userName": "Lemonade12",
+                "content": "hi hello bye",
+                "isLiked": false
+            },
+            {
+                "id": 4,
+                "userName": "Choi-jeonghoon",
+                "content": "못하겠다!!",
+                "isLiked": false
+            },
+            {
+                "id": 5,
+                "userName": "minuk3508",
+                "content": "what the code!",
+                "isLiked": false
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "userName": "minuk3508",
+        "feedImage": "https://blog.kakaocdn.net/dn/qM9y8/btqU92Jmx90/DWzhLUYbCiz7PldqnIB1gK/img.jpg",
+        "content": "반갑습니다.10",
+        "likedNum" : 14,
+        "isLiked": true,
+        "comments":[
+            {
+                "id": 1,
+                "userName": "ssujinc",
+                "content": "반갑습니다.",
+                "isLiked": true
+            },
+            {
+                "id": 2,
+                "userName": "azure928",
+                "content": "포기 하고 싶다!",
+                "isLiked": false
+            },
+            {
+                "id": 3,
+                "userName": "Lemonade12",
+                "content": "hi hello bye",
+                "isLiked": false
+            },
+            {
+                "id": 4,
+                "userName": "Choi-jeonghoon",
+                "content": "못하겠다!!",
+                "isLiked": false
+            },
+            {
+                "id": 5,
+                "userName": "minuk3508",
+                "content": "what the code!",
+                "isLiked": false
+            }
+        ]
+    }
+]

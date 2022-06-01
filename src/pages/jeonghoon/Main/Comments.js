@@ -1,22 +1,31 @@
-function Comments({ commentList }) {
-  console.log(commentList)
+import { useState } from "react";
+import { FiTrash } from "react-icons/fi";
+
+function Comments({ commentid,userName,content,isLiked,commentDelte}) {
+  const handcomment = (id) =>{
+    commentDelte(id)
+  }
+  const [commentIsLiked,setcommentIsLiked] =useState(isLiked);
+  
+ const clickL = ()=>{
+  commentIsLiked? setcommentIsLiked(false): setcommentIsLiked(true)
+ }
   return (
-    <ul className="feed-commentlist">
-      {commentList.map((comment, idx) => {
-        return (
-          <li key={idx} className="comment" style={{display:"flex", justifyContent:"space-between"}}>
+          <li  className="comment" style={{display:"flex", justifyContent:"space-between"}}>
             <div>
-            <span className="newcomment-id">{comment.userName}</span>
-            <span className="newcomment-text">{comment.comment}</span>
-            <span className="newcomment-text">{comment.content}</span>
+            <span className="newcomment-id">{userName}</span>
+            <span className="newcomment-text">{content}</span>
             </div>
-            <span className="newcomment-icons">
-              {comment.isLiked === true ?  <img style={{width:"15px",height:"15px"}} src="/images/jeonghoon/heart.png" alt="feed" /> : null}
+            <div>
+              <span onClick={clickL} className="newcomment-icons">
+              {!commentIsLiked?   
+              <img style={{width:"15px",height:"15px"}} src="/images/jeonghoon/heart.png" alt="feed"/>  : <img style={{width:"15px",height:"15px"}} src="/images/jeonghoon/pinkHeart.png"/>}
               </span>
-          </li>
-        );
-      })}
-    </ul>
+              <span className="newcomment-icons">
+                <FiTrash onClick={()=>{handcomment(commentid)}} />
+              </span>
+              </div>
+          </li>    
   );
 }
 
