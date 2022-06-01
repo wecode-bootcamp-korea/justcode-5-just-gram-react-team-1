@@ -21,7 +21,7 @@ function Login() {
   const buttonOnClick = (event) => {
     event.preventDefault();
     
-    fetch("http://52.79.143.176:8000/users/login", {
+    fetch("http://13.125.249.241/user/login", {
         method: "POST",
         headers: {
             'Content-Type': "application/json"
@@ -36,6 +36,7 @@ function Login() {
           console.log(result)
             if(result.message.includes("SUCCESS")){
                 alert('로그인 되었습니다.');
+                
                 navigate('/main-Jh');
             }
             else{

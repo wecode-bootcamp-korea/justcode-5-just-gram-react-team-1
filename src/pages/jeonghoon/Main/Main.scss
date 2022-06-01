@@ -8,7 +8,14 @@
   justify-content: center;
   background-color: rgba(249, 249, 249, 0.962);
 }
-
+.feeds-jh {
+  margin-right: 15px;
+  padding: 0px 8px 20px 8px;
+  margin-top: 60px;
+  width: 800px;
+  height: 1000px;
+  overflow: auto;
+}
 @media (max-width: 768px) {
   main.main{width: 100%;}
 }
