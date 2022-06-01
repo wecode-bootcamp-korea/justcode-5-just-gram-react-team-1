@@ -45,7 +45,11 @@ function Feeds({
       ...commentList.filter(comment => comment.id !== id)
     ])
   };
-
+  const [Liked,setIsLiked] =useState(isLiked);
+  
+  const likeed = ()=>{
+    Liked? setIsLiked(false): setIsLiked(true)
+  }
   return (   
           <article className="article-Jh">
         <div className="feed-titlebox">
@@ -68,8 +72,8 @@ function Feeds({
         </div>
         <div className="feed-menus">
           <div className="feed-menusleft">
-            <span className="menuslogo menusleft-heart">{isLiked ===true ? <AiTwotoneHeart /> : <AiOutlineHeart /> }
-            </span>
+            
+           <button  onClick={likeed} className="menuslogo menusleft-heart">{Liked ? <AiTwotoneHeart /> : <AiOutlineHeart /> }</button>
             <span className="menuslogo menusleft-comment">
               <BiCommentDetail />
             </span>

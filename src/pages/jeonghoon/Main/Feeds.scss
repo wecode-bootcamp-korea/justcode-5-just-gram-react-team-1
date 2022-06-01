@@ -1,9 +1,15 @@
 .article-Jh {
     display: flex;
     flex-direction: column;
-    
     border: 3px solid #ddd;
     background-color: white;
+    
+    button{ 
+      background:none; 
+      border:0; 
+      padding:0; 
+      cursor: pointer;
+    }
 
     .feed-titlebox {
       display: flex;
