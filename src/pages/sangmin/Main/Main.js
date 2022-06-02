@@ -39,18 +39,3 @@ function MainSm() {
 }
 
 export default MainSm;
-
-/*function MainSm() {
-    return (
-        <div className="MainSm">
-            <Nav />
-            <main className="feeds-mainright">
-                <Feeds />
-                <Mainright />
-            </main>
-        </div>
-    )
-
-}
-
-export default MainSm;*/
