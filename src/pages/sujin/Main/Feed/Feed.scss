@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import '../../../../styles/variables.scss';
 
-#main{
+#mainSj{
     .feeds_stn{ flex:1 auto; padding-top:60px; margin-right:28px; 
         article{ margin-bottom:24px; background:#fff; border:1px solid #dbdbdb; border-radius:4px; 
             .feeds_header{ 
@@ -52,7 +52,8 @@
                     .btn_commDelete{ display:none; }
                     &>.color_darkGray{ color:#262626; margin-top:4px; font-size:10px; }
                 }
-                .feeds_comments{ display:flex; justify-content:space-between; padding:16px; border-top:1px solid #efefef; 
+                .feeds_comments{ padding:16px; border-top:1px solid #efefef; 
+                    display:flex; justify-content:space-between; 
                     input{ width:94%; }
                     button{ width:6%; color:#0095f6; opacity:1; 
                         &:disabled{ opacity:0.3; }
@@ -64,9 +65,9 @@
 }
 
 @media screen and (max-width: 980px) {
-    #main{
+    #mainSj{
         .feeds_stn{ flex:none; width:80%; max-width:600px; padding-right:0; margin:0 auto; 
-            article .feeds_cont .feeds_comments {
+            article .feeds_cont .feeds_comments{
                 input{ width:90%; }
                 .btn_addComment{ width:auto; }
             }
@@ -75,7 +76,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    #main {
+    #mainSj{
         .feeds_stn{ width:100%; max-width:none;  padding-top:36px; 
             .feeds_cont .desc_cnt .desc{ width:54%; }
         }

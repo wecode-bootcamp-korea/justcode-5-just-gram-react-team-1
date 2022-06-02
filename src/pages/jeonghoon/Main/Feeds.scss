@@ -1,18 +1,15 @@
-
-.feeds-jh {
-  margin-right: 15px;
-  padding: 0px 8px 20px 8px;
-  margin-top: 60px;
-  width: 800px;
-  height: 1000px;
-  overflow: auto;
-
-  .article {
+.article-Jh {
     display: flex;
     flex-direction: column;
-    height: 900px;
     border: 3px solid #ddd;
     background-color: white;
+    
+    button{ 
+      background:none; 
+      border:0; 
+      padding:0; 
+      cursor: pointer;
+    }
 
     .feed-titlebox {
       display: flex;
@@ -171,7 +168,4 @@
       }
     }
   }
-}
-@media (max-width: 768px) {
-  aside.aside{display: none;}
-}
+
