@@ -4,6 +4,7 @@ import Comments from "./Comments";
 function Feeds() {
     const commentText = [];
     const [commentList, setCommentList] = useState([]);
+    const [feedList, setFeedList] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:3000/data/commentData.json")
